@@ -12,9 +12,9 @@ Khái niệm
 - Test: 1 bài kiểm tra. Có thể thuộc vào 1 Lesson hoặc độc lập 
 - Learner: người học
 - Tutor: người dạy, người hướng dẫn trực tiếp. 
-- Author: người soạn Course / Test 
-- Lesson Reviewer: người duyệt Course/Test. Course/Test phải được Approved thì mới được Publish.
-- User: người sử dụng hệ thống: Learner, Author, Tutor, Guess, Class Manager
+- Author: người soạn Lesson / Test 
+- Lesson Reviewer: người duyệt Lesson/Test. Lesson/Test phải được Approved thì mới được Publish.
+- User: người sử dụng hệ thống: Learner, Author, Tutor, Guess, Course Manager
 - Guess: người tham quan hệ thống, chưa trở thành Learner, Author, Tutor
 - Course: lớp học / khoá học.  
 - Course Manager: người thiết kế lớp học 
