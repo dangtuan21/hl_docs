@@ -6,3 +6,12 @@ Tất cả các file đều xem bằng tool: https://draw.io
 4. LMS_Student_Flow_Other_1.0.xml: Các chức năng khác hỗ trợ người học
 5. LMS_Teacher_Flow_1.0.xml: Các chức năng hỗ trợ người dạy
 6. LMS_User_Flow_1.0.xml: Chức năng quản lý tài khoản như cập nhật thông tin hoặc đổi mật khẩu
+
+Khái niệm
+- Course: giáo trình, bài giảng, bài học 
+- Student: người học
+- Teacher: người dạy, người hướng dẫn trực tiếp. 
+- Author: người soạn Course
+- User: người sử dụng hệ thống: Student, Author, Teacher...
+- Class: lớp học. 
+- Class Manager: người thiết kế lớp học 
