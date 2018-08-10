@@ -8,10 +8,16 @@ Tất cả các file đều xem bằng tool: https://draw.io
 6. LMS_User_Flow_1.0.xml: Chức năng quản lý tài khoản như cập nhật thông tin hoặc đổi mật khẩu
 
 Khái niệm
-- Course: giáo trình, bài giảng, bài học 
-- Student: người học
-- Teacher: người dạy, người hướng dẫn trực tiếp. 
-- Author: người soạn Course
-- User: người sử dụng hệ thống: Student, Author, Teacher...
-- Class: lớp học. 
+- Course: giáo trình, bài giảng, bài học. 1 Course có thể có nhiều Unit.Mỗi Unit có thể là 1 clip/video hoặc tài liệu (ppt, pdf, word...), Test 
+- Test: 1 bài kiểm tra. Có thể thuộc vào 1 Course hoặc độc lập 
+- Learner: người học
+- Tutor: người dạy, người hướng dẫn trực tiếp. 
+- Author: người soạn Course / Test 
+- User: người sử dụng hệ thống: Learner, Author, Tutor, Guess, Class Manager
+- Guess: người tham quan hệ thống, chưa trở thành Learner, Author, Tutor
+- Class: lớp học / khoá học.  
 - Class Manager: người thiết kế lớp học 
+- Session: buổi học, được tiến hành khi Learner(s) tham gia học
+Có 2 hình thức: 
+. Self-paced: Learner chọn Course và tự học 
+. Tutor-paced: Learner chọn Class và học theo hướng dẫn của Tutor     
