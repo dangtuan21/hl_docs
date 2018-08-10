@@ -8,7 +8,7 @@ Tất cả các file đều xem bằng tool: https://draw.io
 6. LMS_User_Flow_1.0.xml: Chức năng quản lý tài khoản như cập nhật thông tin hoặc đổi mật khẩu
 
 Khái niệm
-- Course: giáo trình, bài giảng, bài học. 1 Course có thể có nhiều Unit.Mỗi Unit có thể là 1 clip/video hoặc tài liệu (ppt, pdf, word...), Test 
+- Course: giáo trình, bài giảng, bài học. 1 Course có thể có nhiều Section. 1 Section có thể có nhiều Unit.Mỗi Unit có thể là 1 clip/video hoặc tài liệu (ppt, pdf, word...), Test 
 - Test: 1 bài kiểm tra. Có thể thuộc vào 1 Course hoặc độc lập 
 - Learner: người học
 - Tutor: người dạy, người hướng dẫn trực tiếp. 
