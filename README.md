@@ -13,6 +13,7 @@ Khái niệm
 - Learner: người học
 - Tutor: người dạy, người hướng dẫn trực tiếp. 
 - Author: người soạn Course / Test 
+- Course Reviewer: người duyệt Course/Test. Course/Test phải được Approved thì mới được Publish.
 - User: người sử dụng hệ thống: Learner, Author, Tutor, Guess, Class Manager
 - Guess: người tham quan hệ thống, chưa trở thành Learner, Author, Tutor
 - Class: lớp học / khoá học.  
