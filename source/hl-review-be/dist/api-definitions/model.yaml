@@ -1,0 +1,175 @@
+swagger: "2.0"
+info:
+  description: "This is Category Backend API"
+  version: "1.0.0"
+  title: "Category"
+  termsOfService: "http://hnn/terms"
+  contact:
+    email: "info@hnn.com"  
+host: "localhost:5001"
+basePath: "/"
+tags:
+- name: "category"
+  description: "Everything about your Categories"
+schemes:
+- "http"
+- "https"
+paths:
+  /category:
+    post:
+      tags:
+      - "category"
+      summary: "Add a new category or update existing category"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "category object that needs to be added"
+        required: true
+        schema:
+          $ref: "#/definitions/Category"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Category"
+        400:
+          description: "Invalid parameters"
+        404:
+          description: "Not found"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  /category/search/{searchTerm}/{userEmail}:
+    get:
+      tags:
+      - "category"
+      summary: "Find category by searchTerm + userEmail"
+      description: "Returns a list of category"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "searchTerm"
+        in: "path"
+        description: "search term"
+        required: true
+        type: "string"
+      - name: "userEmail"
+        in: "path"
+        description: "user email"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Category"
+        400:
+          description: "Invalid parameters"
+        404:
+          description: "Not found"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  /category/{id}/{userEmail}:
+    get:
+      tags:
+      - "category"
+      summary: "Get category by id + userEmail"
+      description: "Returns a category by id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "category Id"
+        required: true
+        type: "string"
+      - name: "userEmail"
+        in: "path"
+        description: "user email"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Category"
+        400:
+          description: "Invalid parameters supplied"
+        404:
+          description: "Not found"
+          schema:
+            $ref: "#/definitions/ApiResponse"            
+    delete:
+      tags:
+      - "category"
+      summary: "Deletes a category"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "category Id"
+        required: true
+        type: "string"
+      - name: "userEmail"
+        in: "path"
+        description: "user email"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Category"
+        400:
+          description: "Invalid parameters supplied"
+        404:
+          description: "Not found"
+          schema:
+            $ref: "#/definitions/ApiResponse"            
+definitions:
+  Category:
+    type: "object"
+    properties:
+      parentId:
+        type: "integer"
+        example: "231"
+      name:
+        type: "string"
+        example: "Category Name"
+      code:
+        type: "string"
+        example: "1234"
+      description:
+        type: "string"
+        example: "description"
+    example:
+      parentId: "name"
+      name: "name"
+      code: "123"
+      description: "description"
+    xml:
+      name: "Category"
+  ApiResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+      message:
+        type: "string"
+    example:
+      code: 0
+      type: "type"
+      message: "message"

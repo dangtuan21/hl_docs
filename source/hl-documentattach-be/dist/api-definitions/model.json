@@ -1,0 +1,305 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is Course Backend API",
+    "version": "1.0.0",
+    "title": "Course",
+    "termsOfService": "http://hnn/terms",
+    "contact": {
+      "email": "info@hnn.com"
+    }
+  },
+  "host": "localhost:5001",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "course",
+      "description": "Everything about your Courses"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/course": {
+      "post": {
+        "tags": [
+          "course"
+        ],
+        "summary": "Add a new course or update existing course",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "course object that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          },
+          "400": {
+            "description": "Invalid parameters"
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/course/search/{searchTerm}/{userEmail}": {
+      "get": {
+        "tags": [
+          "course"
+        ],
+        "summary": "Find course by searchTerm + userEmail",
+        "description": "Returns a list of course",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "searchTerm",
+            "in": "path",
+            "description": "search term",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userEmail",
+            "in": "path",
+            "description": "user email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          },
+          "400": {
+            "description": "Invalid parameters"
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/course/{id}/{userEmail}": {
+      "get": {
+        "tags": [
+          "course"
+        ],
+        "summary": "Get course by id + userEmail",
+        "description": "Returns a course by id",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "course Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userEmail",
+            "in": "path",
+            "description": "user email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          },
+          "400": {
+            "description": "Invalid parameters supplied"
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "course"
+        ],
+        "summary": "Deletes a course",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "course Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userEmail",
+            "in": "path",
+            "description": "user email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          },
+          "400": {
+            "description": "Invalid parameters supplied"
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Course": {
+      "type": "object",
+      "required": [
+        "name",
+        "code"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Advanced Math"
+        },
+        "code": {
+          "type": "string",
+          "example": "M01"
+        },
+        "description": {
+          "type": "string",
+          "example": "Advaned Math for College & Univ"
+        },
+        "startDate": {
+          "type": "string",
+          "example": "01/01/2000"
+        },
+        "endDate": {
+          "type": "string",
+          "example": "01/01/2000"
+        },
+        "courseManagerId": {
+          "type": "string",
+          "example": ""
+        },
+        "tutoId": {
+          "type": "string",
+          "example": ""
+        },
+        "lessonId": {
+          "type": "string",
+          "example": ""
+        },
+        "schedule": {
+          "type": "string",
+          "enum": [
+            "Mo, 10am-11am",
+            "Wd, 2pm-3pm"
+          ]
+        },
+        "learningMethod": {
+          "type": "integer",
+          "enum": [
+            "Self-paced",
+            "Tutor-paced"
+          ]
+        },
+        "createdDate": {
+          "type": "string",
+          "example": "01/01/2000"
+        }
+      },
+      "example": {
+        "name": "Advanced Math",
+        "code": "M01",
+        "description": "Advaned Math for College & Univ",
+        "startDate": "01/01/2000",
+        "endDate": "01/01/2000",
+        "courseManagerId": "1",
+        "tutoId": "1",
+        "lessonId": "1",
+        "schedule": 1,
+        "learningMethod": 1,
+        "createdDate": "01/01/2000"
+      },
+      "xml": {
+        "name": "Course"
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "code": 0,
+        "type": "type",
+        "message": "message"
+      }
+    }
+  }
+}
